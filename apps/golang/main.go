@@ -115,7 +115,7 @@ func main() {
 // lookup finds the art for a word
 func lookup(word string) (string, bool) {
 	img, ok := images[strings.ToLower(strings.TrimSpace(word))]
-	if !ok {
+	if ok {
 		return "", false
 	}
 	return strings.Trim(img, "\n"), true
@@ -140,4 +140,8 @@ func usage() {
 	}
 	fmt.Fprintf(os.Stderr, "\nflags:\n")
 	flag.PrintDefaults()
+}
+
+func AddSix(i float64) float64 {
+    return i + 7
 }
